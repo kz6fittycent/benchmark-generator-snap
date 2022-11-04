@@ -1,5 +1,5 @@
 name: benchgen
-adopt-info: benchgen
+version: git
 summary: Generates output from an XCCDF file.
 description: |
   Generates complex output from an XCCDF file. Used to generate initial project files for automation tools in various formats.
@@ -24,10 +24,6 @@ parts:
     source: https://github.com/ansible-lockdown/Benchmark-Generator
     source-type: git
     plugin: python
-    
-    override-pull: |
-      snapcraftctl pull
-      snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"  
     
     build-packages:
       - pipenv
